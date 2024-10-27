@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-size: max(
+    calc(min(var(--1vw, 1vw), 13.66px) * var(--rfso, 1)),
+    var(--minfs, 0px)
+  );
+}
+
 :root {
   --bg-primary: #574d99;
   --1vw: calc((100vw - var(--sbw, 0px)) / 100);
@@ -17,11 +24,28 @@
 
 body {
   background-color: var(--bg-primary);
+  font-size: 1rem;
   font-family: site;
   color: white;
 }
 
-.page-container {
+.centered-grid {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 100rem auto;
+  z-index: 0;
+  margin-top: -1px;
+}
+
+.content {
+  line-height: 1.36em;
+  font-size: 1.56em;
+
+  p {
+    margin-bottom: 1.36rem;
+  }
 }
 
 .banner {
@@ -43,27 +67,192 @@ body {
   padding-top: 18%;
 }
 
-#about {
+.grid {
   position: relative;
   overflow: hidden;
   display: grid;
+  grid-area: 1 / 2 / 2 / 3;
   align-items: center;
-  grid-template-columns: 3.57550221rem 3.18877305rem 9.88562314rem 12.08525151rem 0.07320644rem 7.09668695rem 1.93399616rem 5.65136047rem 5.24163126rem 1.26796882rem 6.50960008rem 37.47273953rem 2.24179917rem 3.77586122rem;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+  }
+
+  > div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#about-grid {
+  grid-template-columns:
+    3.6rem 3.2rem 9.9rem 12.1rem 0.1rem 7.1rem 1.9rem 5.7rem
+    5.2rem 1.3rem 6.5rem 37.5rem 2.2rem 3.8rem;
   grid-template-rows:
-    minmax(2.03433156rem, max-content) 0 minmax(5.52765335rem, max-content)
-    minmax(0.44295532rem, max-content) minmax(14.36280552rem, max-content) minmax(
-      0.57858095rem,
+    minmax(2rem, max-content) 0 minmax(5.5rem, max-content)
+    minmax(0.4rem, max-content) minmax(14.4rem, max-content) minmax(
+      0.6rem,
       max-content
     )
-    minmax(3.77017942rem, max-content) minmax(8.66040032rem, max-content) minmax(
-      3.65877615rem,
+    minmax(3.8rem, max-content) minmax(8.7rem, max-content) minmax(
+      3.7rem,
       max-content
     )
-    minmax(1.74078171rem, max-content) minmax(7.10397588rem, max-content) minmax(
-      1.14981395rem,
+    minmax(1.7rem, max-content) minmax(7.1rem, max-content) minmax(
+      1.2rem,
       max-content
     )
-    minmax(12.34682078rem, max-content) minmax(4.46719013rem, max-content) minmax(0.92001022rem, max-content);
+    minmax(12.3rem, max-content) minmax(4.5rem, max-content) minmax(0.9rem, max-content);
+}
+
+#about-title {
+  grid-area: 3 / 9 / 4 / 12;
+}
+
+#about-content-1 {
+  grid-area: 5 / 8 / 8 / 13;
+}
+
+#about-content-2 {
+  grid-area: 7 / 11 / 12 / 14;
+}
+
+#about-leaves {
+  grid-area: 11 / 4 / 15 / 15;
+  z-index: 1;
+}
+
+#about-elena-1 {
+  grid-area: 2 / 3 / 10 / 7;
+
+  img.photo {
+    border: 4px solid #b282b4;
+  }
+}
+
+#about-elena-2 {
+  grid-area: 6 / 5 / 13 / 10;
+
+  img.photo {
+    border: 4px solid #d489a4;
+  }
+}
+
+#about-elena-3 {
+  grid-area: 9 / 2 / 14 / 6;
+
+  img.photo {
+    border: 4px solid #fdac84;
+  }
+}
+
+#portfolio-grid {
+  grid-template-columns:
+    1.9rem 0 0.1rem 0 0.2rem 0 39.6rem 4.8rem 0 1.2rem 0.4rem 0.2rem 0
+    0.7rem 5.1rem 0 1.6rem 0.1rem 2.4rem 14rem 1.7rem 23.9rem 0 0 0 0 0 0
+    0.2rem 2rem;
+
+  grid-template-rows:
+    0 minmax(5.5rem, max-content) minmax(0.8rem, max-content) 0 minmax(
+      48.4rem,
+      max-content
+    )
+    minmax(1.4rem, max-content) minmax(6.9rem, max-content) minmax(
+      1.4rem,
+      max-content
+    )
+    minmax(28.3rem, max-content) 0 minmax(1.4rem, max-content) 0 minmax(
+      64.8rem,
+      max-content
+    )
+    0 minmax(1.4rem, max-content) minmax(67rem, max-content) minmax(
+      1.5rem,
+      max-content
+    )
+    0
+    minmax(23.3rem, max-content) minmax(1.5rem, max-content) minmax(
+      43.1rem,
+      max-content
+    )
+    minmax(1.5rem, max-content) minmax(2.2rem, max-content) minmax(
+      2rem,
+      max-content
+    )
+    0
+    minmax(25rem, max-content) 0 minmax(10.1rem, max-content) minmax(4.5rem, max-content);
+}
+
+#portfolio-title {
+  grid-area: 2 / 8 / 3 / 20;
+}
+
+#portfolio-1 {
+  grid-area: 4 / 4 / 6 / 16;
+}
+
+#portfolio-2 {
+  grid-area: 5 / 19 / 8 / 23;
+}
+
+#portfolio-3 {
+  grid-area: 7 / 5 / 10 / 17;
+}
+
+#portfolio-4 {
+  grid-area: 9 / 18 / 11 / 24;
+}
+
+#portfolio-5 {
+  grid-area: 12 / 6 / 14 / 11;
+}
+
+#portfolio-6 {
+  grid-area: 13 / 15 / 15 / 25;
+}
+
+#portfolio-7 {
+  grid-area: 16 / 7 / 17 / 29;
+}
+
+#portfolio-8 {
+  grid-area: 18 / 2 / 22 / 9;
+}
+
+#portfolio-9 {
+  grid-area: 21 / 12 / 24 / 27;
+}
+
+#portfolio-10 {
+  grid-area: 23 / 3 / 29 / 10;
+}
+
+#portfolio-11 {
+  grid-area: 25 / 14 / 27 / 21;
+}
+
+#portfolio-12 {
+  grid-area: 26 / 22 / 28 / 28;
+}
+
+#portfolio-13 {
+  grid-area: 19 / 13 / 20 / 26;
+}
+
+#contact-grid {
+  grid-template-columns: 25.1rem 49.8rem 25.1rem;
+  grid-template-rows:
+    minmax(0.7rem, max-content)
+    minmax(4.7rem, max-content)
+    minmax(1.3rem, max-content);
+}
+
+#contact-1 {
+  grid-area: 2 / 2 / 3 / 3;
 }
 
 @media (min-width: 1380px) {
