@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #574d99;
+  --1vw: calc((100vw - var(--sbw, 0px)) / 100);
+  --1vh: var(--inner1Vh, 1vh);
+}
+
+@font-face {
+  font-family: "site";
+  src: url("/fonts/site.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background-color: var(--bg-primary);
+  font-family: site;
+  color: white;
+}
+
+.page-container {
+}
+
+.banner {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.banner-title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50vw;
+  max-width: 700px;
+  height: auto;
+  z-index: 2;
+  padding-top: 18%;
+}
+
+#about {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 3.57550221rem 3.18877305rem 9.88562314rem 12.08525151rem 0.07320644rem 7.09668695rem 1.93399616rem 5.65136047rem 5.24163126rem 1.26796882rem 6.50960008rem 37.47273953rem 2.24179917rem 3.77586122rem;
+  grid-template-rows:
+    minmax(2.03433156rem, max-content) 0 minmax(5.52765335rem, max-content)
+    minmax(0.44295532rem, max-content) minmax(14.36280552rem, max-content) minmax(
+      0.57858095rem,
+      max-content
+    )
+    minmax(3.77017942rem, max-content) minmax(8.66040032rem, max-content) minmax(
+      3.65877615rem,
+      max-content
+    )
+    minmax(1.74078171rem, max-content) minmax(7.10397588rem, max-content) minmax(
+      1.14981395rem,
+      max-content
+    )
+    minmax(12.34682078rem, max-content) minmax(4.46719013rem, max-content) minmax(0.92001022rem, max-content);
+}
+
+@media (min-width: 1380px) {
+  .banner {
+    max-height: 1800px;
+  }
+}
