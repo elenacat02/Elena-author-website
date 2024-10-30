@@ -1,10 +1,10 @@
 import { defineConfig } from "vite"
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   root: "src",
-  base: "/Elena-author-website",
+  base: mode === "production" ? "/Elena-author-website/" : "/",
   build: {
     outDir: "../dist",
     emptyOutDir: true,
   },
-})
+}))
