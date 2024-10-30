@@ -40,78 +40,155 @@
     <nav
       class="bg-primary text-white px-6 py-4 flex justify-between items-center sticky top-0 w-full z-10"
     >
-      <div class="ml-auto space-x-6">
+      <a
+        href="mailto:elenacarmichaelauthor@gmail.com"
+        class="hidden sm:inline"
+      >
+        elenacarmichaelauthor@gmail.com
+      </a>
+      <div
+        class="ml-auto space-x-6"
+        x-data
+      >
         <a
-          href="#"
+          href="#home"
           class="text-gray-200 hover:text-gray-400"
+          x-smooth-scroll
         >
           Home
         </a>
         <a
-          href="#"
+          href="#about"
           class="text-gray-200 hover:text-gray-400"
+          x-smooth-scroll
         >
           About
         </a>
         <a
-          href="#"
+          href="#portfolio"
           class="text-gray-200 hover:text-gray-400"
+          x-smooth-scroll
         >
           Portfolio
         </a>
       </div>
     </nav>
 
-    <section id="banner">
-      <div class="banner-container">
-        <div class="relative w-full">
-          <img
-            src="images/banner-title.png"
-            class="banner-title"
-          />
-        </div>
-
+    <a
+      id="home"
+      aria-hidden="true"
+      class="anchor"
+    ></a>
+    <section aria-label="banner">
+      <div class="relative w-full">
         <img
-          src="/images/banner.jpg"
-          class="banner"
+          src="images/banner-title.png"
+          class="banner-title"
         />
       </div>
+
+      <img
+        src="/images/banner.jpg"
+        alt="banner image"
+        class="banner"
+      />
     </section>
 
-    <section
+    <a
       id="about"
-      class="centered-grid pt-3"
+      aria-hidden="true"
+      class="anchor"
+    ></a>
+    <section
+      aria-label="about"
+      class="flex justify-center my-8"
     >
       <div
+        id="about-grid-sm"
+        class="items-center flex-col mx-4 sm:mx-6 text-center md:text-left"
+      >
+        <div
+          id="about-title-sm"
+          class="mb-2"
+        >
+          <img
+            src="/images/about-title.png"
+            alt="Elena Carmichael - author, illustrator, scientist"
+            class="section-title"
+            role="heading"
+            aria-level="1"
+          />
+        </div>
+        <div class="flex flex-col md:flex-row p-4">
+          <div class="md:w-1/3 flex items-start justify-center md:justify-end">
+            <div
+              id="about-left-sm"
+              class="flex gap-3 sm:flex-row md:flex-col"
+            >
+              <img
+                class="elena-photo-1 max-h-64 hidden sm:inline md:max-h-full max-w-full object-contain"
+                src="/images/elena-1.png"
+              />
+              <img
+                class="elena-photo-3 max-h-64 max-w-full object-contain"
+                src="/images/elena-3.png"
+              />
+            </div>
+          </div>
+
+          <div class="content md:ml-6 md:mr-4 mt-6 md:mt-0 md:w-2/3">
+            <p>
+              Hi! I’m Elena, an illustrator and writer creating art and stories for kids who love ​
+              adventure, animals, and a touch of mystery.
+            </p>
+            <p>
+              Whether I’m painting with watercolors or working digitally, I strive to bring as ​much
+              color and life to the page as possible. My illustrations are full of whimsical
+              ​details and little surprises for viewers to discover each time they look.
+            </p>
+            <p>
+              Outside of writing and illustrating, I’m pursuing a career in animal ​behavior
+              research. I recently graduated with a B.S. in Ecology and ​Evolutionary Biology and a
+              B.A. in Theatre from Rice University. ​While in college, I had the chance to work on
+              projects ranging ​from training birds to studying how a guide dog’s early ​experiences
+              shape its behavior. My knowledge of animals often ​finds its way into my art and
+              stories— but blended with fun, ​fantastical elements.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
         id="about-grid"
-        class="content grid"
+        class="content content-grid"
       >
         <div id="about-title">
-          <img src="/images/about-title.png" />
+          <img
+            src="/images/about-title.png"
+            alt="About"
+            role="heading"
+            aria-level="1"
+          />
         </div>
         <div id="about-content-1">
           <p>
-            Hi! I’m Elena, an illustrator and writer creating art and stories
-            for kids who love ​adventure, animals, and a touch of mystery.
+            Hi! I’m Elena, an illustrator and writer creating art and stories for kids who love ​
+            adventure, animals, and a touch of mystery.
           </p>
           <p>
-            Whether I’m painting with watercolors or working digitally, I strive
-            to bring as ​much color and life to the page as possible. My
-            illustrations are full of whimsical ​details and little surprises
-            for viewers to discover each time they look.
+            Whether I’m painting with watercolors or working digitally, I strive to bring as ​much
+            color and life to the page as possible. My illustrations are full of whimsical ​details
+            and little surprises for viewers to discover each time they look.
           </p>
         </div>
 
         <div id="about-content-2">
           <p>
-            Outside of writing and illustrating, I’m pursuing a career in animal
-            ​behavior research. I recently graduated with a B.S. in Ecology and
-            ​Evolutionary Biology and a B.A. in Theatre from Rice University.
-            ​While in college, I had the chance to work on projects ranging
-            ​from training birds to studying how a guide dog’s early
-            ​experiences shape its behavior. My knowledge of animals often
-            ​finds its way into my art and stories— but blended with fun,
-            ​fantastical elements.
+            Outside of writing and illustrating, I’m pursuing a career in animal ​behavior research.
+            I recently graduated with a B.S. in Ecology and ​Evolutionary Biology and a B.A. in
+            Theatre from Rice University. ​While in college, I had the chance to work on projects
+            ranging ​from training birds to studying how a guide dog’s early ​experiences shape its
+            behavior. My knowledge of animals often ​finds its way into my art and stories— but
+            blended with fun, ​fantastical elements.
           </p>
           <p>
             If you’d like to learn more or just say hi, feel free to
@@ -126,34 +203,103 @@
 
         <div id="about-elena-1">
           <img
-            class="photo"
+            class="elena-photo-1"
             src="/images/elena-1.png"
           />
         </div>
 
         <div id="about-elena-2">
           <img
-            class="photo"
+            class="elena-photo-2"
             src="/images/elena-2.png"
           />
         </div>
 
         <div id="about-elena-3">
           <img
-            class="photo"
+            class="elena-photo-3"
             src="/images/elena-3.png"
           />
         </div>
       </div>
     </section>
 
-    <section
+    <a
       id="portfolio"
-      class="centered-grid pt-3"
+      class="anchor"
+      aria-hidden="true"
+    ></a>
+    <section
+      aria-label="portfolio"
+      class="flex justify-center mt-6 mx-6"
     >
+      <div id="portfolio-grid-sm">
+        <div
+          id="portfolio-title"
+          class="flex justify-center"
+        >
+          <img
+            src="/images/portfolio-title.png"
+            class="section-title"
+            alt="Portfolio"
+            role="heading"
+            aria-level="1"
+          />
+        </div>
+        <div class="portfolio-row">
+          <div
+            class="portfolio-column"
+            style="--column-width: 56.13%"
+          >
+            <img src="/images/portfolio-1.png" />
+            <img src="/images/portfolio-3.jpg" />
+          </div>
+          <div
+            class="portfolio-column"
+            style="--column-width: 43.87%"
+          >
+            <img src="/images/portfolio-2.jpg" />
+            <img src="/images/portfolio-4.png" />
+          </div>
+          <div
+            class="portfolio-column"
+            style="--column-width: 48.45%"
+          >
+            <img src="/images/portfolio-5.png" />
+          </div>
+          <div
+            class="portfolio-column"
+            style="--column-width: 51.55%"
+          >
+            <img src="/images/portfolio-6.png" />
+          </div>
+          <div
+            class="portfolio-column"
+            style="--column-width: 100%"
+          >
+            <img src="/images/portfolio-7.jpg" />
+          </div>
+          <div
+            class="portfolio-column"
+            style="--column-width: 41.2%"
+          >
+            <img src="/images/portfolio-8.jpg" />
+            <img src="/images/portfolio-10.png" />
+            <img src="/images/portfolio-12.png" />
+          </div>
+          <div
+            class="portfolio-column"
+            style="--column-width: 58.8%"
+          >
+            <img src="/images/portfolio-13.png" />
+            <img src="/images/portfolio-9.png" />
+            <img src="/images/portfolio-11.png" />
+          </div>
+        </div>
+      </div>
       <div
         id="portfolio-grid"
-        class="content grid"
+        class="content content-grid"
       >
         <div id="portfolio-title">
           <img src="/images/portfolio-title.png" />
@@ -205,16 +351,15 @@
 
     <section
       id="contact"
-      class="centered-grid pt-3"
+      class="flex justify-center my-10"
+      aria-label="contact"
     >
-      <div
-        id="contact-grid"
-        class="content grid"
-      >
-        <div id="contact-1">
-          <img src="/images/contact-email.png" />
-        </div>
-      </div>
+      <img
+        src="/images/contact-email.png"
+        alt="elenacarmichaelauthor@gmail.com"
+        class="section-title"
+        style="scale: 80%"
+      />
     </section>
 
     <script

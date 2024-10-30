@@ -6,12 +6,7 @@ import eslintConfigPrettier from "eslint-config-prettier"
 export default [
   {
     files: ["src/**/*.{js,jsx,ts,tsx}"],
-    ignores: [
-      "src/dist",
-      "postcss.config.js",
-      "tailwind.config.js",
-      "vite.config.js",
-    ],
+    ignores: ["src/dist", "postcss.config.js", "tailwind.config.js", "vite.config.js"],
     languageOptions: {
       globals: globals.browser,
     },
