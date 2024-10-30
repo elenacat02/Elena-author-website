@@ -1,3 +1,4 @@
 src/dist/
+dist/
 node_modules/
 .eslintcache
